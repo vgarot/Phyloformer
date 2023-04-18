@@ -46,10 +46,10 @@ def simulate_trees(numtrees, numleaves, outdir, treeType, bl):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', '--ntrees', type=int, required=True, help='number of trees (default: 20)')
-    parser.add_argument('-l', '--nleaves', type=int, required=False, default=20, help='number of leaves')
+    parser.add_argument('-n', '--ntrees', type=int, required=False, default=20, help='number of trees (default: 20)')
+    parser.add_argument('-l', '--nleaves', type=int, required=False, default=20, help='number of leaves (default: 20)')
     parser.add_argument('-t','--topology', type=str, required=False, default='uniform', help='tree topology (default: uniform). Allowed values: [birth-death, uniform]', choices=["birth-death", "uniform"], metavar="TOPO")
-    parser.add_argument('-o', '--output', type=str, required=False, help='path to the output directory were the .nwk tree files will be saved')
+    parser.add_argument('-o', '--output', type=str, required=True, help='path to the output directory were the .nwk tree files will be saved')
     parser.add_argument('-b', '--branchlength',type=str, required=False, default='uniform',help='branch length distribution (default: uniform). Allowed values: [exponential, uniform]', choices=["exponential", "uniform"], metavar="BL")
     args = parser.parse_args()
 
